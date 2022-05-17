@@ -6,19 +6,22 @@ import Link from 'next/link'
 
 const Footer = (props) => {
     return (
-        <StyledFooter width="main" flexDirection="row" justifyContent="space-between">
-            <Logo />
-            <Box className="footer-links" flexDirection="row">
-                <Link href="/">About Us</Link>
-                <Link href="/">Terms of Use</Link>
-                <Link href="/">Contact</Link>
-            </Box>
+        <StyledFooter width="full">
+            <LayoutBox width="main" flexDirection="row" justifyContent="space-between" alignItems="center">
+                <Logo />
+                <Box className="footer-links" flexDirection="row">
+                    <Link href="/">About Us</Link>
+                    <Link href="/">Terms of Use</Link>
+                    <Link href="/">Contact</Link>
+                </Box>
+            </LayoutBox>
         </StyledFooter>
     )
 }
 
 const StyledFooter = styled(LayoutBox)`
     padding: 5rem 0;
+    background: ${props => props.theme.footerBackground};
     .footer-links {
         width: auto;
         a {

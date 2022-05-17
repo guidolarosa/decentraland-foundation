@@ -49,7 +49,7 @@ export default function Home() {
         />
       </Header>
       <main>
-        <LayoutBox width={'main'}>
+        <LayoutBox width={'padded'}>
           <Box className="breakdown">
             <Text strong textAlign={'center'} fontSize={'4rem'}>
               Brief History of the Foundation / Decentraland, Decentraland DAO and MANA. 
@@ -57,6 +57,25 @@ export default function Home() {
             <Text textAlign={'center'}>
               Brief History of the Foundation / Decentraland, Decentraland DAO and MANA. Brief History of the Foundation / Decentraland, Decentraland DAO and MANA. Brief History of the Foundation / Decentraland, Decentraland DAO and MANA. 
             </Text>
+          </Box>
+          <Box flexDirection="row" className="ip-assets">
+            <Box flexDirection="row">
+              <Box>
+                <Heading size={3}>
+                  IP Assets
+                </Heading>
+                <Text size="small">
+                  The Foundation holds IP assets of the platform including trademarks, software and copyright for the benefit of the community and that in that capacity the Foundation undertakes actions against infringement.
+                </Text>
+                <Text size="small">
+                  The Foundation holds IP assets of the platform including trademarks, software and copyright for the benefit of the community and that in that capacity the Foundation undertakes actions against infringement.
+                </Text>
+                <Button type="secondary" href="/">Read More</Button>
+              </Box>
+            </Box>
+            <Box>
+              <Image src="/img/IPAssetsGraphic.svg" alt="IP Assets" width={484} height={614} />
+            </Box>
           </Box>
         </LayoutBox>
         <LayoutBox className="news" width={'padded'}>
@@ -112,6 +131,9 @@ const StyledHome = styled.header`
     .breakdown {
       margin: 20rem auto 20rem;
       width: 120rem;
+    }
+    .ip-assets {
+      margin-bottom: 20rem;
     }
     .news {
       margin-bottom: 20rem;

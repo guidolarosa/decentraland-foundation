@@ -9,7 +9,8 @@ interface Theme {
     primaryButtonHover: string,
     navbarLinkBackgroundHover: string,
     navbarLinkBackgroundActive: string,
-    borderColor: string
+    borderColor: string,
+    footerBackground: string
 }
 
 const theme : Theme = {
@@ -23,7 +24,8 @@ const theme : Theme = {
     primaryButtonHover: 'hsla(220, 77%, 64%, 1)',
     navbarLinkBackgroundHover: 'hsla(220, 2%, 15%, 1)',
     navbarLinkBackgroundActive: 'hsla(220, 2%, 20%, 1)',
-    borderColor: 'hsla(0, 0%, 100%, 0.5)'
+    borderColor: 'hsla(0, 0%, 100%, 0.5)',
+    footerBackground: 'hsla(0, 0%, 0%, 1)',
 }
 
 export const breakpoints = {

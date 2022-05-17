@@ -7,6 +7,7 @@ interface ButtonProps {
     className?: string;
     buttonType?: 'a' | 'button',
     href?: string,
+    type?: string,
     onClick?: () => void
 }
 
@@ -14,14 +15,15 @@ const Button = ({
     children, 
     className,
     buttonType = 'a',
-    href = '#'
+    href = '#',
+    type = 'primary'
 } : ButtonProps) => {
     
     return buttonType == 'a' ? 
-        <StyledButtonLink className={className}>
+        <StyledButtonLink href={href} className={`${className} ${type}`}>
             {children}
         </StyledButtonLink> :
-        <StyledButton className={className}>
+        <StyledButton className={`${className} ${type}`}>
             {children}
         </StyledButton>
     
@@ -36,13 +38,23 @@ const commonStyles = `
     padding: 0 8rem;
     font-size: 3rem;
     border-radius: 2rem;
-    background: ${theme.primary};
     width: fit-content;
     border-radius: 0.5rem;
     font-weight: 600;
     transition: 0.10s ease-in-out all;
-    &:hover {
-        background: ${theme.primaryButtonHover};
+    letter-spacing: 0.1rem;
+    &.primary {
+        background: ${theme.primary};
+        &:hover {
+            background: ${theme.primaryButtonHover};
+        }
+    }
+    &.secondary {
+        // background: ${theme.primary};
+        border: calc(1rem / 4) solid ${theme.primary};
+        &:hover {
+            background: ${theme.primaryButtonHover};
+        }
     }
 `;
 

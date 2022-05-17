@@ -7,7 +7,8 @@ interface LayoutBoxProps {
     className?: string;
     width?: 'full' | 'main' | 'padded';
     flexDirection: 'row' | 'row-reverse' | 'column' | 'column-reverse',
-    justifyContent: string,
+    justifyContent?: string,
+    alignItems?: string
 }
 
 const LayoutBox = ({
@@ -16,6 +17,7 @@ const LayoutBox = ({
     width = 'full',
     flexDirection = 'column',
     justifyContent = 'start',
+    alignItems = 'flex-start'
 } : LayoutBoxProps) => {
 
     return (
@@ -23,6 +25,7 @@ const LayoutBox = ({
             className={`${width} ${className}`} 
             flexDirection={flexDirection}
             justifyContent={justifyContent}
+            alignItems={alignItems}
         >
             {children}
         </StyledBox>
@@ -35,6 +38,7 @@ const StyledBox = styled.div<LayoutBoxProps>`
     display: flex;
     flex-direction: ${props => props.flexDirection};
     justify-content: ${props => props.justifyContent};
+    align-items: ${props => props.alignItems};
     width: 100%;
     margin: 0 auto;
     &.main {

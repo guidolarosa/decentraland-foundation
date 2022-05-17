@@ -43,7 +43,7 @@ export default function Home() {
           }
           heroSecondaryContent={
             <Box className="image-box">
-                <Image src="/img/heroGraphic.svg" layout="responsive" width={586} height={820} priority/>
+                <Image src="/img/heroGraphic.svg" layout="responsive" width={586} height={820} priority alt="Decentraland Foundation"/>
             </Box>
           }
         />
@@ -65,7 +65,7 @@ export default function Home() {
             {NewsMock.map((news, index) => (
               <Box width="45rem" className="news-item" flexDirection={'column'}>
                 <Box className="thumbnail">
-                  <Image src={news.imageUrl} width={300} height={180}/>
+                  <Image src={news.imageUrl} width={300} height={180} alt="Decentraland Foundation News Thumbnail"/>
                 </Box>
                 <Heading className="news-item-heading" size={6}>{news.title}</Heading>
                 <Text className="description">{news.details}</Text>

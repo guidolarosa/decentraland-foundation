@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Logo = ({className}) => {
     return (
         <StyledLogo className={className}>
-            <Image src="/img/logo.svg" width={215} height={46} />
+            <Image src="/img/logo.svg" width={215} height={46} alt="Decentraland Foundation"/>
         </StyledLogo>
     )
 }

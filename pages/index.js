@@ -50,7 +50,7 @@ export default function Home() {
       </Header>
       <main>
         <LayoutBox width={'padded'}>
-          <Box className="breakdown">
+          <Box className="breakdown" dataAos="fade-up">
             <Text strong textAlign={'center'} fontSize={'4rem'}>
               Brief History of the Foundation / Decentraland, Decentraland DAO and MANA. 
             </Text>
@@ -58,7 +58,7 @@ export default function Home() {
               Brief History of the Foundation / Decentraland, Decentraland DAO and MANA. Brief History of the Foundation / Decentraland, Decentraland DAO and MANA. Brief History of the Foundation / Decentraland, Decentraland DAO and MANA. 
             </Text>
           </Box>
-          <Box flexDirection="row" className="ip-assets">
+          <Box flexDirection="row" className="ip-assets" dataAos="fade-up">
             <Box flexDirection="row">
               <Box>
                 <Heading size={3}>
@@ -73,16 +73,16 @@ export default function Home() {
                 <Button type="secondary" href="/">Read More</Button>
               </Box>
             </Box>
-            <Box>
+            <Box dataRellaxSpeed={4}>
               <Image src="/img/IPAssetsGraphic.svg" alt="IP Assets" width={484} height={614} />
             </Box>
           </Box>
         </LayoutBox>
-        <LayoutBox className="news" width={'padded'}>
+        <LayoutBox className="news" width={'padded'} dataAos="fade-up">
           <Heading size={4} className="news-heading">Find out about the latest updates of the Decentraland Foundation</Heading>
           <Box className="news-list" flexDirection="row" justifyContent="space-between">
             {NewsMock.map((news, index) => (
-              <Box width="45rem" className="news-item" flexDirection={'column'} key={index}>
+              <Box dataAos="fade-up" width="45rem" className="news-item" flexDirection={'column'} key={index}>
                 <Box className="thumbnail">
                   <Image src={news.imageUrl} width={300} height={180} alt="Decentraland Foundation News Thumbnail"/>
                 </Box>

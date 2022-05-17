@@ -2,23 +2,24 @@ import { ReactNode } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from 'utils/theme';
 
-interface LayoutBoxProps {
-    children?: ReactNode;
-    className?: string;
+import Box from 'components/common/Box/Box'
+import BoxProps from './../../../types/Box'
+
+interface LayoutBoxProps extends BoxProps {
     width?: 'full' | 'main' | 'padded';
-    flexDirection: 'row' | 'row-reverse' | 'column' | 'column-reverse',
-    justifyContent?: string,
-    alignItems?: string
 }
 
-const LayoutBox = ({
-    children, 
-    className = '',
-    width = 'full',
-    flexDirection = 'column',
-    justifyContent = 'start',
-    alignItems = 'flex-start'
-} : LayoutBoxProps) => {
+const LayoutBox = (props : LayoutBoxProps) => {
+
+    const {
+        children, 
+        className = '',
+        width = 'full',
+        flexDirection = 'column',
+        justifyContent = 'auto',
+        alignItems = 'auto',
+        dataAos = null
+    } = props;
 
     return (
         <StyledBox 
@@ -26,6 +27,7 @@ const LayoutBox = ({
             flexDirection={flexDirection}
             justifyContent={justifyContent}
             alignItems={alignItems}
+            dataAos={dataAos && dataAos}
         >
             {children}
         </StyledBox>
@@ -33,7 +35,7 @@ const LayoutBox = ({
     
 };
 
-const StyledBox = styled.div<LayoutBoxProps>`
+const StyledBox = styled(Box)`
     font-size: 2.5rem;
     display: flex;
     flex-direction: ${props => props.flexDirection};

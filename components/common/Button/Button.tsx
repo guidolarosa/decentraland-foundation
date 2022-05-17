@@ -37,12 +37,11 @@ const commonStyles = `
     line-height: 10rem;
     padding: 0 8rem;
     font-size: 3rem;
-    border-radius: 2rem;
     width: fit-content;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    transition: 0.10s ease-in-out all;
-    letter-spacing: 0.1rem;
+    border-radius: 0.2rem;
+    // font-weight: 600;
+    transition: 0.1s ease-in-out all;
+    // letter-spacing: 0.1rem;
     color: ${theme.mainText};
     &.primary {
         background: ${theme.primary};

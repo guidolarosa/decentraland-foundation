@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import LayoutBox from 'components/layout/LayoutBox/LayoutBox';
 
 const TopBar = ({children, href}) => {
     return (
-        <StyledTopBar>
+        <StyledTopBar flexDirection='row' dataAos="fade-down">
             <div className="circle"/>
             <Link href={href}>
                 {children}
@@ -13,7 +14,7 @@ const TopBar = ({children, href}) => {
     )
 }
 
-const StyledTopBar = styled.div`
+const StyledTopBar = styled(LayoutBox)`
     height: 5rem;
     display: inline-block;
     background: ${props => props.theme.primary};

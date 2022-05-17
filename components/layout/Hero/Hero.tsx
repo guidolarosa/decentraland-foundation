@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Box from 'components/common/Box/Box';
 import LayoutBox from 'components/layout/LayoutBox/LayoutBox';
 
-interface Hero {
+interface HeroProps {
     heroContent: ReactNode | string,
     heroSecondaryContent?: ReactNode | string,
     className?: string,
@@ -17,10 +17,13 @@ const Hero = ({
     heroSecondaryContent, 
     className,
     primaryContentMaxWidth = '120rem'
-}) => {
+} : HeroProps) => {
     return (
-        <StyledHero className={className} primaryContentMaxWidth={primaryContentMaxWidth} width={'main'}>
-            <Box flexDirection={'row'} className={'hero-content'}>
+        <StyledHero 
+            className={className} 
+            primaryContentMaxWidth={primaryContentMaxWidth} width={'main'}
+        >
+            <Box dataAos={'fade-up'} flexDirection={'row'} className={'hero-content'}>
                 <Box className="hero-primary-content">
                     {heroContent}
                 </Box>
@@ -32,10 +35,11 @@ const Hero = ({
     )
 }
 
-const StyledHero = styled(LayoutBox)`
+const StyledHero = styled(LayoutBox)<HeroProps>`
     .hero-content {
         justify-content: space-between;
         .hero-primary-content {
+            max-width: ${props => props.primaryContentMaxWidth}
         }
         .hero-secondary-content {
             width: fit-content;

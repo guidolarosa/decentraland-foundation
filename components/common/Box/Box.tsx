@@ -1,37 +1,31 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components'
+import BoxProps from './../../../types/Box'
 
-interface BoxProps {
-    children?: ReactNode;
-    className?: string;
-    flex?: boolean;
-    flexDirection?: 'column' | 'row' | 'column-reverse' | 'row-reverse';
-    width?: number | string | 'full' | 'half';
-    height?: number | string;
-    alignItems?: string
-    justifyContent?: string
-}
-
-const Box = ({
-    children, 
-    className, 
-    flex = true,
-    width = '100%',
-    height = 'auto',
-    flexDirection = 'column',
-    alignItems = 'flex-end',
-    justifyContent = 'start',
-} : BoxProps) => {
+const Box = (props : BoxProps) => {
+    const {
+        children, 
+        className, 
+        flex = true,
+        width = '100%',
+        height = 'auto',
+        flexDirection = 'column',
+        alignItems = 'auto',
+        justifyContent = 'auto',
+        rellax = false,
+        dataAos = null
+    } = props;
 
     return (
         <StyledBox 
-            className={className}
+            className={`${className} ${rellax && 'rellax'}`}
             flex={flex} 
             flexDirection={flexDirection}
             width={width}
             height={height}
             alignItems={alignItems}
             justifyContent={justifyContent}
+            data-aos={dataAos && dataAos}
         >
             {children}
         </StyledBox>
@@ -46,6 +40,7 @@ const StyledBox = styled.div<BoxProps>`
     justify-content:  ${props => (props.justifyContent)};
     width: ${props => props.width};
     height: ${props => props.height};
+    align-items: ${props => props.alignItems};
 `;
 
 export default Box;

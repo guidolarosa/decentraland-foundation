@@ -142,7 +142,8 @@ const StyledHome = styled.header`
       }
       .news-item {
         padding: 3rem;
-        border: 1px solid ${props => props.theme.borderColor};
+        background: ${props => props.theme.cardBackground};
+        box-shadow: 0 1rem 2rem hsla(0,0%,0%,0.1);
         border-radius: 1rem;
         .news-item-heading {
           margin-bottom: 1rem;
@@ -158,6 +159,17 @@ const StyledHome = styled.header`
         a {
           font-size: 2rem;
           color: ${props => props.theme.primary};
+          display: inline-block;
+          height: 5rem;
+          line-height: 5rem;
+          padding: 0 2rem;
+          width: fit-content;
+          border-radius: 0.5rem;
+          font-weight: 600;
+          background: ${props => props.theme.readMoreButtonBackground};
+          &:hover {
+          }
+          /* display: none; */
         }
       }
     }

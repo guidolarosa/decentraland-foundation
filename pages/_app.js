@@ -16,7 +16,4 @@ export default MyApp
 
 const StyledRoot = styled.div`
   background: ${props => props.theme.background};
-  * {
-    color: ${props => props.theme.mainText};
-  }
 `

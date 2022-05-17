@@ -43,6 +43,7 @@ const commonStyles = `
     font-weight: 600;
     transition: 0.10s ease-in-out all;
     letter-spacing: 0.1rem;
+    color: ${theme.mainText};
     &.primary {
         background: ${theme.primary};
         &:hover {

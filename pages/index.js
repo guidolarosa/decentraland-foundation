@@ -63,7 +63,7 @@ export default function Home() {
           <Heading size={4} className="news-heading">Find out about the latest updates of the Decentraland Foundation</Heading>
           <Box className="news-list" flexDirection="row" justifyContent="space-between">
             {NewsMock.map((news, index) => (
-              <Box width="45rem" className="news-item" flexDirection={'column'}>
+              <Box width="45rem" className="news-item" flexDirection={'column'} key={index}>
                 <Box className="thumbnail">
                   <Image src={news.imageUrl} width={300} height={180} alt="Decentraland Foundation News Thumbnail"/>
                 </Box>

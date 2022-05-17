@@ -133,7 +133,7 @@ const StyledHome = styled.header`
       width: 120rem;
     }
     .ip-assets {
-      margin-bottom: 20rem;
+      margin-bottom: 40rem;
     }
     .news {
       margin-bottom: 20rem;

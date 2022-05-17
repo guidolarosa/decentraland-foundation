@@ -95,7 +95,7 @@ const StyledHome = styled.header`
   .homepage-hero {
     .hero-content-wrapper {
       max-width: 80rem;
-      padding-left: 10rem;
+      padding-left: 20rem;
       padding-top: 10rem;
     }
     .heading {
@@ -103,7 +103,8 @@ const StyledHome = styled.header`
     }
     .image-box {
       padding-top: 5rem;
-      width: 70rem;
+      margin-right: 15rem;
+      width: 60rem;
       height: 100%;
     }
   }

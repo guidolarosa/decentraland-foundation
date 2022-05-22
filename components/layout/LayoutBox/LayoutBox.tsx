@@ -27,7 +27,7 @@ const LayoutBox = (props : LayoutBoxProps) => {
             flexDirection={flexDirection}
             justifyContent={justifyContent}
             alignItems={alignItems}
-            dataAos={dataAos && dataAos}
+            dataAos={dataAos}
         >
             {children}
         </StyledBox>
@@ -35,7 +35,7 @@ const LayoutBox = (props : LayoutBoxProps) => {
     
 };
 
-const StyledBox = styled(Box)`
+const StyledBox = styled(Box)<LayoutBoxProps>`
     font-size: 2.5rem;
     display: flex;
     flex-direction: ${props => props.flexDirection};

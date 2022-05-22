@@ -8,6 +8,10 @@ type HeadingProps = {
     textAlign?: string
 }
 
+type StyledHeadingProps = {
+    textAlign?: string,
+}
+
 const Heading = ({size = 1, children = "Heading Placeholder", className, textAlign}: HeadingProps) => {
     switch (size) {
         case 1:
@@ -32,33 +36,33 @@ const CommonHeadingStyles = (props) => `
 `;
 
 
-const StyledH1 = styled.h1`
+const StyledH1 = styled.h1<StyledHeadingProps>`
     font-size: 11rem;
     line-height: 120%;
     ${props => CommonHeadingStyles(props)};
 `;
 
-const StyledH2 = styled.h2`
+const StyledH2 = styled.h2<StyledHeadingProps>`
     font-size: 9.5rem;
     ${props => CommonHeadingStyles(props)};
 `;
 
-const StyledH3 = styled.h3`
+const StyledH3 = styled.h3<StyledHeadingProps>`
     font-size: 8rem;
     ${props => CommonHeadingStyles(props)};
 `;
 
-const StyledH4 = styled.h4`
+const StyledH4 = styled.h4<StyledHeadingProps>`
     font-size: 6.5rem;
     ${props => CommonHeadingStyles(props)};
 `;
 
-const StyledH5 = styled.h5`
+const StyledH5 = styled.h5<StyledHeadingProps>`
     font-size: 5rem;
     ${props => CommonHeadingStyles(props)};
 `;
 
-const StyledH6 = styled.h6`
+const StyledH6 = styled.h6<StyledHeadingProps>`
     font-size: 3.5rem;
     ${props => CommonHeadingStyles(props)};
 `;

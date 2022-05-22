@@ -1,18 +1,16 @@
 import styled from 'styled-components';
 import theme from 'utils/theme';
 
-type HeadingProps = {
+interface HeadingProps {
+    textAlign?: string,
+}
+interface HeadingComponentProps extends HeadingProps {
     children: string,
     size: number,
     className?: string,
-    textAlign?: string
 }
 
-type StyledHeadingProps = {
-    textAlign?: string,
-}
-
-const Heading = ({size = 1, children = "Heading Placeholder", className, textAlign}: HeadingProps) => {
+const Heading = ({size = 1, children = "Heading Placeholder", className, textAlign}: HeadingComponentProps) => {
     switch (size) {
         case 1:
             return <StyledH1 textAlign={textAlign} className={className}>{children}</StyledH1>;
@@ -36,33 +34,33 @@ const CommonHeadingStyles = (props) => `
 `;
 
 
-const StyledH1 = styled.h1<StyledHeadingProps>`
+const StyledH1 = styled.h1<HeadingProps>`
     font-size: 11rem;
     line-height: 120%;
     ${props => CommonHeadingStyles(props)};
 `;
 
-const StyledH2 = styled.h2<StyledHeadingProps>`
+const StyledH2 = styled.h2<HeadingProps>`
     font-size: 9.5rem;
     ${props => CommonHeadingStyles(props)};
 `;
 
-const StyledH3 = styled.h3<StyledHeadingProps>`
+const StyledH3 = styled.h3<HeadingProps>`
     font-size: 8rem;
     ${props => CommonHeadingStyles(props)};
 `;
 
-const StyledH4 = styled.h4<StyledHeadingProps>`
+const StyledH4 = styled.h4<HeadingProps>`
     font-size: 6.5rem;
     ${props => CommonHeadingStyles(props)};
 `;
 
-const StyledH5 = styled.h5<StyledHeadingProps>`
+const StyledH5 = styled.h5<HeadingProps>`
     font-size: 5rem;
     ${props => CommonHeadingStyles(props)};
 `;
 
-const StyledH6 = styled.h6<StyledHeadingProps>`
+const StyledH6 = styled.h6<HeadingProps>`
     font-size: 3.5rem;
     ${props => CommonHeadingStyles(props)};
 `;

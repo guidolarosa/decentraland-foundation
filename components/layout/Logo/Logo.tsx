@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 
-const Logo = ({className}) => {
+type Logo = {
+    className?: string
+};
+
+const Logo = ({className} : Logo ) => {
     return (
         <StyledLogo className={className}>
             <Image src="/img/logo.svg" width={215} height={46} alt="Decentraland Foundation"/>

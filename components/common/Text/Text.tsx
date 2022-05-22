@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 
-type TextProps = {
-    children: string,
-    className?: string,
+interface TextProps {
     textAlign?: 'center' | 'left' | 'right',
     strong?: boolean,
     fontSize?: string,
+}
+interface TextComponentProps extends TextProps {
+    children: string,
+    className?: string,
     size?: 'small' | 'medium' | 'large'
 }
+
 
 const Text = ({
     children = "Placeholder text", 
@@ -16,7 +19,7 @@ const Text = ({
     strong = false,
     fontSize = '3rem',
     size = 'medium'
-} : TextProps) => {
+} : TextComponentProps) => {
 
     return (
         <StyledText 
@@ -31,7 +34,7 @@ const Text = ({
     
 };
 
-const StyledText = styled.p`
+const StyledText = styled.p<TextProps>`
     font-size: ${props => props.fontSize};
     margin-bottom: 6rem;
     font-weight: 200;

@@ -5,11 +5,14 @@ import Box from 'components/common/Box/Box';
 import LayoutBox from 'components/layout/LayoutBox/LayoutBox';
 
 interface HeroProps {
+    primaryContentMaxWidth?: string
+    
+}
+
+interface HeroComponentProps extends HeroProps {
     heroContent: ReactNode | string,
     heroSecondaryContent?: ReactNode | string,
     className?: string,
-    primaryContentMaxWidth?: string
-
 }
 
 const Hero = ({
@@ -17,7 +20,7 @@ const Hero = ({
     heroSecondaryContent, 
     className,
     primaryContentMaxWidth = '120rem'
-} : HeroProps) => {
+} : HeroComponentProps) => {
     return (
         <StyledHero 
             className={className} 

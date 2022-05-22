@@ -9,7 +9,7 @@ import { breakpoints } from "utils/theme";
 
 import { MainNavigation } from 'utils/ui_constants';
 
-const Navbar = (props) => {
+const Navbar = () => {
   const highlighterRef = useRef(null);
   const linkContainerRef = useRef(null);
 

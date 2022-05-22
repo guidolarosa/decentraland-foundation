@@ -13,6 +13,7 @@ import Footer from 'components/layout/Footer/Footer'
 import TopBar from 'components/layout/TopBar/TopBar';
 
 import { NewsMock } from 'utils/ui_constants';
+import Marquee from 'react-fast-marquee';
 
 export default function Home() {
   return (
@@ -73,10 +74,22 @@ export default function Home() {
                 <Button type="secondary" href="/">Read More</Button>
               </Box>
             </Box>
-            <Box dataRellaxSpeed={4}>
+            <Box dataRellaxSpeed={4} className="graphic">
               <Image src="/img/IPAssetsGraphic.svg" alt="IP Assets" width={484} height={614} />
             </Box>
           </Box>
+        </LayoutBox>
+        <LayoutBox className="partners-marquee">
+          <Heading size={5} textAlign="center">We work together with all these organizations to protect IP Assets</Heading>
+          {/* <Marquee gradient={false} speed={100}>
+            <Image src="/img/marqueeLogos.svg" alt="Partner logos" width={1000} height={150} />
+          </Marquee>
+          <Marquee gradient={false} speed={100} direction="right">
+            <Image src="/img/marqueeLogos.svg" alt="Partner logos" width={1000} height={150} />
+          </Marquee>
+          <Marquee gradient={false} speed={100}>
+            <Image src="/img/marqueeLogos.svg" alt="Partner logos" width={1000} height={150} />
+          </Marquee> */}
         </LayoutBox>
         <LayoutBox className="news" width={'padded'} dataAos="fade-up">
           <Heading size={4} className="news-heading">Find out about the latest updates of the Decentraland Foundation</Heading>
@@ -112,16 +125,17 @@ export default function Home() {
 
 const StyledHome = styled.header`
   .homepage-hero {
+    flex-grow: 1;
+    justify-content: center;
     .hero-content-wrapper {
       max-width: 80rem;
       padding-left: 20rem;
-      padding-top: 10rem;
     }
     .heading {
       margin-bottom: 3rem;
     }
     .image-box {
-      padding-top: 5rem;
+      /* padding-top: 5rem; */
       margin-right: 15rem;
       width: 60rem;
       height: 100%;
@@ -134,6 +148,10 @@ const StyledHome = styled.header`
     }
     .ip-assets {
       margin-bottom: 40rem;
+      .graphic {
+        position: relative;
+        top: -10rem;
+      }
     }
     .news {
       margin-bottom: 20rem;
@@ -170,6 +188,15 @@ const StyledHome = styled.header`
           &:hover {
           }
           /* display: none; */
+        }
+      }
+    }
+    .partners-marquee {
+      margin-bottom: 20rem;
+      .marquee {
+        margin: 0;
+        .marquee-image-wrapper {
+          opacity: 0.5;
         }
       }
     }

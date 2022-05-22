@@ -25,6 +25,9 @@
     "eslint-config-next": "12.1.6",
     "styled-components": "^5.3.5"
   },
+  "engines": {
+    "node": "16.0.0"
+  },
   "babel": {
     "env": {
       "development": {

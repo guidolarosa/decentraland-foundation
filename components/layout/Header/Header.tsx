@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import Box from 'components/common/Box/Box';
 import Navbar from 'components/layout/Navbar/Navbar';
+import {Flex} from 'rebass'
 
 const Header = ({children, beforeNavbar}) => {
     return (
-        <StyledHeader>
+        <StyledHeader width={"100%"} flexDirection={"column"} alignItems={"center"}>
             {beforeNavbar}
             <Navbar/>
             {children}
@@ -12,8 +12,6 @@ const Header = ({children, beforeNavbar}) => {
     )
 }
 
-const StyledHeader = styled(Box)`
-    min-height: 100vh;
-`
+const StyledHeader = styled(Flex)``
 
 export default Header;

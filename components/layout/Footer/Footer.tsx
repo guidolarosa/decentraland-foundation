@@ -1,25 +1,24 @@
 import styled from 'styled-components'
-import LayoutBox from 'components/layout/LayoutBox/LayoutBox'
-import Box from 'components/common/Box/Box'
 import Logo from 'components/layout/Logo/Logo'
 import Link from 'next/link'
+import {Flex, Box} from 'rebass'
 
 const Footer = (props) => {
     return (
-        <StyledFooter width="full">
-            <LayoutBox width="main" flexDirection="row" justifyContent="space-between" alignItems="center">
+        <StyledFooter justifyContent="center">
+            <Flex width={['90%', '90%', '180rem']} flexDirection="row" justifyContent="space-between" alignItems="center">
                 <Logo />
                 <Box className="footer-links" flexDirection="row">
                     <Link href="/">About Us</Link>
                     <Link href="/">Terms of Use</Link>
                     <Link href="/">Contact</Link>
                 </Box>
-            </LayoutBox>
+            </Flex>
         </StyledFooter>
     )
 }
 
-const StyledFooter = styled(LayoutBox)`
+const StyledFooter = styled(Flex)`
     padding: 5rem 0;
     background: ${props => props.theme.footerBackground};
     .footer-links {

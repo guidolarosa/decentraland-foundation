@@ -1,10 +1,9 @@
 import styled from "styled-components";
+import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
-import Box from "components/common/Box/Box";
 import Button from "components/common/Button/Button";
-import LayoutBox from "components/layout/LayoutBox/LayoutBox";
 import Logo from "components/layout/Logo/Logo";
-import Link from "next/link";
+import { Flex, Box, Link } from 'rebass';
 import { breakpoints } from "utils/theme";
 
 import { MainNavigation } from 'utils/ui_constants';
@@ -26,22 +25,32 @@ const Navbar = () => {
         .current
         .getBoundingClientRect()
         .x;
-    console.log(hoveredElementLeftEdge);
     let offset = hoveredElementLeftEdge - containerLeftEdge;
-    console.log(offset);
     highlighterRef.current.style.width = hoveredElementWidth + 'px';
     highlighterRef.current.style.left = offset + 'px';
   };
-
+  const router = useRouter();
+  
   return (
-    <StyledNavbar dataAos={'fade-down'}>
-      <LayoutBox width="main" className="navbar-inner-container">
-        <Logo className="logo" />
+    <StyledNavbar width={"100%"} justifyContent="center">
+      <Flex width={['90%', '90%', '180rem']} className="navbar-inner-container" justifyContent={"space-between"}>
+        <Link href="/">
+          <Logo className="logo" />
+        </Link>
         <nav className="main-navigation" ref={linkContainerRef}>
           <ul>
             {MainNavigation.map((link) => (
-              <li key={link.label} onMouseEnter={handleLinkHover}>
-                <Link href={link.href}>
+              <li 
+                key={link.label} 
+                onMouseEnter={handleLinkHover} 
+                onClick={() => {
+                  if (link.scrollTo && document.querySelector('#' + link.id)) {
+                    document.querySelector('#' + link.id).scrollIntoView()
+                  } else {
+                    router.push('/#' + link.id)
+                  }
+                }}>
+                <Link href={link.scrollTo ? null : link.href}>
                   {link.label}
                 </Link>
               </li>
@@ -49,12 +58,12 @@ const Navbar = () => {
             <div className="highlighter" ref={highlighterRef}/>
           </ul>
         </nav>
-      </LayoutBox>
+      </Flex>
     </StyledNavbar>
   );
 };
 
-const StyledNavbar = styled(Box)`
+const StyledNavbar = styled(Flex)`
   padding: 6rem 0 6rem;
   /* background: ${props => props.theme.primary}; */
   /* border-bottom: 1px solid gray; */

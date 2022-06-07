@@ -1,23 +1,21 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
 import styled from 'styled-components';
-import LayoutBox from 'components/layout/LayoutBox/LayoutBox';
+import { Flex, Box, Text, Link } from 'rebass';
 import Hero from 'components/layout/Hero/Hero';
 import Heading from 'components/common/Heading/Heading'
 import Button from 'components/common/Button/Button'
-import Text from 'components/common/Text/Text'
-import Box from 'components/common/Box/Box'
 import Header from 'components/layout/Header/Header'
 import Footer from 'components/layout/Footer/Footer'
 import TopBar from 'components/layout/TopBar/TopBar';
 
 import { NewsMock } from 'utils/ui_constants';
 import Marquee from 'react-fast-marquee';
+import theme from './../utils/theme';
 
 export default function Home() {
   return (
-    <StyledHome>
+    <StyledHome flexDirection={"column"}>
       <Head>
         <title>Decentraland Foundation</title>
         <link rel="icon" href="/favicon.ico" />
@@ -32,14 +30,14 @@ export default function Home() {
         <Hero 
           className={'homepage-hero'}
           heroContent={
-            <Box className="hero-content-wrapper">
+            <Box className="hero-content-wrapper" width={"80rem"} pl={"10rem"}>
               <Heading className={'heading'} size={1}>
                 Decentraland <br/>Foundation
               </Heading>
-              <Text className={'sub-heading'}>
+              <Text className={'sub-heading'} sx={{lineHeight: '5rem', mb: '4rem', fontSize: '3rem', fontWeight: '200'}}>
                 We foster the decentralization of Decentraland, along with the Decentraland community, and hold intellectual property assets.
               </Text>
-              <Button>Go to Decentraland.org</Button>
+              <Button href="https://decentraland.org/">Go to Decentraland.org</Button>
             </Box>
           }
           heroSecondaryContent={
@@ -49,37 +47,53 @@ export default function Home() {
           }
         />
       </Header>
-      <main>
-        <LayoutBox width={'padded'}>
+      <Flex as="main" flexDirection={"column"} alignItems={"center"}>
+        <Flex flexDirection={"column"} width={['90%', '90%', '180rem']}>
           <Box className="breakdown" dataAos="fade-up">
-            <Text strong textAlign={'center'} fontSize={'4rem'}>
+            <Text as="strong" textAlign={'center'} fontSize={'4rem'} mb={'4rem'} display={"block"} lineHeight={"7rem"}>
               Brief History of the Foundation / Decentraland, Decentraland DAO and MANA. 
             </Text>
-            <Text textAlign={'center'}>
-              Brief History of the Foundation / Decentraland, Decentraland DAO and MANA. Brief History of the Foundation / Decentraland, Decentraland DAO and MANA. Brief History of the Foundation / Decentraland, Decentraland DAO and MANA. 
+            <Text textAlign={'center'} fontWeight={'200'} lineHeight="6rem" fontSize={"2.5rem"}>
+              The Decentraland Foundation is a private foundation with no commercial purposes. It was incorporated under the laws of Panama on April 20, 2020 and has its statutory seat in Panama City. The main object of the Foundation is holding the intellectual property assets of the Decentraland platform, and acting along with, and for the benefit of, the MANA and LAND communities at large, to foster the already achieved decentralization of Decentraland. 
             </Text>
+            <Link href="/about" mt={"6rem"} display={"block"} textAlign={"center"} fontSize={"2.5rem"} color={theme.primary} sx={{
+                transition: '0.25s ease-in-out all',
+                px: '2rem',
+                height: '6rem',
+                borderRadius: '0.75rem',
+                lineHeight: '6rem',
+                width: 'fit-content',
+                mx: 'auto',
+                '&:hover': {
+                  background: theme.readMoreButtonBackground
+                }
+              }}>
+              Read more about the foundation
+            </Link>
           </Box>
-          <Box flexDirection="row" className="ip-assets" dataAos="fade-up">
-            <Box flexDirection="row">
-              <Box>
-                <Heading size={3}>
-                  IP Assets
-                </Heading>
-                <Text size="small">
-                  The Foundation holds IP assets of the platform including trademarks, software and copyright for the benefit of the community and that in that capacity the Foundation undertakes actions against infringement.
-                </Text>
-                <Text size="small">
-                  The Foundation holds IP assets of the platform including trademarks, software and copyright for the benefit of the community and that in that capacity the Foundation undertakes actions against infringement.
-                </Text>
-                <Button type="secondary" href="/">Read More</Button>
-              </Box>
-            </Box>
-            <Box dataRellaxSpeed={4} className="graphic">
+          <Flex width={"100%"} className="ip-assets" flexDirection={"row"} sx={{position: 'relative'}}>
+            <Flex flexDirection={"column"} width={["50%"]}>
+              <Text as="h3" fontSize={'6rem'} mb={'4rem'}>
+                IP Assets
+              </Text>
+              <Text fontSize={"2.5rem"} lineHeight={"5rem"} fontWeight={"200"} mb={"2rem"}>
+                Due to the DAO’s lack of legal status, the Decentraland Foundation holds IP assets of the Decentraland platform including trademarks, software and copyright for the benefit of the community and in that capacity the Foundation undertakes actions against infringement.
+              </Text>
+              <Text fontSize={"2.5rem"} lineHeight={"5rem"} fontWeight={"200"} mb={"6rem"}>
+                Among others, the Decentraland Foundation acting for the benefit of the Decentraland community as a whole, holds the intellectual property rights over the DCL Client, the Desktop Client, the SDK 5.0, the Marketplace (<Link sx={{color: theme.primary}} href="https://market.decentraland.org" target={"_blank"}>https://market.decentraland.org</Link>), the Builder, the Blog, Events, Agora, Forum, the Land Manager, the Command Line Interface, DAO, the Developers’ Hub, the Rewards tool which, with any other features, tools and/or materials made available from time to time by the Foundation. It also holds the IP over the Decentraland name and logo, among other IP assets.
+              </Text>
+              <Button type="secondary" href="/">Read More</Button>
+            </Flex>
+            <Box className="graphic" width={["80rem"]} sx={{
+              position: 'absolute',
+              top: '-20rem',
+              right: 0
+            }}>
               <Image src="/img/IPAssetsGraphic.svg" alt="IP Assets" width={484} height={614} />
             </Box>
-          </Box>
-        </LayoutBox>
-        <LayoutBox className="partners-marquee">
+          </Flex>
+        </Flex>
+        <Flex className="partners-marquee" flexDirection={"column"} width={['90%', '90%', '180rem']}>
           <Heading size={5} textAlign="center">We work together with all these organizations to protect IP Assets</Heading>
           {/* <Marquee gradient={false} speed={100}>
             <Image src="/img/marqueeLogos.svg" alt="Partner logos" width={1000} height={150} />
@@ -90,47 +104,46 @@ export default function Home() {
           <Marquee gradient={false} speed={100}>
             <Image src="/img/marqueeLogos.svg" alt="Partner logos" width={1000} height={150} />
           </Marquee> */}
-        </LayoutBox>
-        <LayoutBox className="news" width={'padded'} dataAos="fade-up">
-          <Heading size={4} className="news-heading">Find out about the latest updates of the Decentraland Foundation</Heading>
-          <Box className="news-list" flexDirection="row" justifyContent="space-between">
+        </Flex>
+        <Flex id="news" className="news" flexDirection={"column"} width={['90%', '90%', '180rem']}>
+          <Text as="h4" className="news-heading" fontSize={"6rem"} mb={"6rem"}>
+            Find out about the latest updates of the Decentraland Foundation
+          </Text>
+
+          <Flex className="news-list" flexDirection="row" mx={"-2rem"} justifyContent={"center"}>
             {NewsMock.map((news, index) => (
-              <Box dataAos="fade-up" width="45rem" className="news-item" flexDirection={'column'} key={index}>
+              <Flex width="45rem" className="news-item" flexDirection={'column'} key={index} mx={"2rem"}>
                 <Box className="thumbnail">
                   <Image src={news.imageUrl} width={300} height={180} alt="Decentraland Foundation News Thumbnail"/>
                 </Box>
                 <Heading className="news-item-heading" size={6}>{news.title}</Heading>
                 <Text className="description">{news.details}</Text>
-                <Link href={news.href}>Read more</Link>
-              </Box>
+                <Link mt={"auto"} href={news.href}>Read more</Link>
+              </Flex>
             ))}
-          </Box>
-        </LayoutBox>
-        <LayoutBox width={'main'}>
+          </Flex>
+        </Flex>
+        <Flex flexDirection={"column"} width={['90%', '90%', '180rem']} id={"contact"}>
           <Box className="breakdown">
             <Heading textAlign={'center'} size={4}>
               Reach out to the foundation 
             </Heading>
-            <Text textAlign={'center'}>
+            <Text textAlign={'center'} fontSize="2rem" opacity={0.7}>
              Here we will have links to mail address and social media channels
             </Text>
           </Box>
-        </LayoutBox>
-      </main>
+        </Flex>
+      </Flex>
       <Footer/>
       <div className="lower-bar"/>
     </StyledHome>
   )
 }
 
-const StyledHome = styled.header`
+const StyledHome = styled(Flex)`
   .homepage-hero {
     flex-grow: 1;
     justify-content: center;
-    .hero-content-wrapper {
-      max-width: 80rem;
-      padding-left: 20rem;
-    }
     .heading {
       margin-bottom: 3rem;
     }
@@ -148,10 +161,6 @@ const StyledHome = styled.header`
     }
     .ip-assets {
       margin-bottom: 40rem;
-      .graphic {
-        position: relative;
-        top: -10rem;
-      }
     }
     .news {
       margin-bottom: 20rem;

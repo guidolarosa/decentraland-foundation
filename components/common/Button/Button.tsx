@@ -38,7 +38,7 @@ const commonStyles = `
     padding: 0 8rem;
     font-size: 3rem;
     width: fit-content;
-    border-radius: 0.2rem;
+    border-radius: 0.75rem;
     // font-weight: 600;
     transition: 0.1s ease-in-out all;
     // letter-spacing: 0.1rem;

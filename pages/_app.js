@@ -31,4 +31,5 @@ export default MyApp
 
 const StyledRoot = styled.div`
   background: ${props => props.theme.background};
+  width: 100%;
 `

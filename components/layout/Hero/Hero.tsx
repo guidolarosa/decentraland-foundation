@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 import { Box, Flex } from 'rebass' 
-import FadeUp from '../FadeUp/FadeUp';
+import { FadeUp } from '../Fade/Fade';
 
 interface HeroProps {
     primaryContentMaxWidth?: string
@@ -24,11 +24,23 @@ const Hero = ({
             className={className} 
         >
             <FadeUp>
-                <Flex dataAos={'fade-up'} flexDirection={'row'} className={'hero-content'} width={['90%', '90%', '180rem']} alignItems={"center"}>
+                <Flex 
+                    dataAos={'fade-up'} 
+                    flexDirection={['column-reverse', 'row']} 
+                    className={'hero-content'} 
+                    mx={'auto'}
+                    width={['90%', '90%', '180rem']} 
+                    alignItems={"center"}
+                    justifyContent={['center', 'unset']} 
+                    height={['auto', 'calc(100vh - 30rem)']}
+                >
                     <Box className="hero-primary-content">
                         {heroContent}
                     </Box>
-                    <Box className="hero-secondary-content">
+                    <Box className="hero-secondary-content" sx={{
+                        display: ['flex', 'unset'],
+                        justifyContent: ['center']
+                    }}>
                         {heroSecondaryContent && heroSecondaryContent}
                     </Box>
                 </Flex>

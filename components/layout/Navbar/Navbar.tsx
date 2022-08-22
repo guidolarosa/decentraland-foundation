@@ -5,7 +5,7 @@ import Button from "components/common/Button/Button";
 import Logo from "components/layout/Logo/Logo";
 import { Flex, Box, Link } from 'rebass';
 import { breakpoints } from "utils/theme";
-
+import { FadeDown } from 'components/layout/Fade/Fade'
 import { MainNavigation } from 'utils/ui_constants';
 
 const Navbar = () => {
@@ -33,32 +33,34 @@ const Navbar = () => {
   
   return (
     <StyledNavbar width={"100%"} justifyContent="center">
-      <Flex width={['90%', '90%', '180rem']} className="navbar-inner-container" justifyContent={"space-between"}>
-        <Link href="/">
-          <Logo className="logo" />
-        </Link>
-        <nav className="main-navigation" ref={linkContainerRef}>
-          <ul>
-            {MainNavigation.map((link) => (
-              <li 
-                key={link.label} 
-                onMouseEnter={handleLinkHover} 
-                onClick={() => {
-                  if (link.scrollTo && document.querySelector('#' + link.id)) {
-                    document.querySelector('#' + link.id).scrollIntoView()
-                  } else {
-                    router.push('/#' + link.id)
-                  }
-                }}>
-                <Link href={link.scrollTo ? null : link.href}>
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-            <div className="highlighter" ref={highlighterRef}/>
-          </ul>
-        </nav>
-      </Flex>
+      <FadeDown>
+        <Flex width={['90%', '90%', '180rem']} mx={'auto'}  className="navbar-inner-container" justifyContent={"space-between"} alignItems={"center"}>
+            <Link href="/" mr={"auto"}>
+              <Logo className="logo" />
+            </Link>
+            <nav className="main-navigation" ref={linkContainerRef}>
+              <ul>
+                {MainNavigation.map((link) => (
+                  <li 
+                    key={link.label} 
+                    onMouseEnter={handleLinkHover} 
+                    onClick={() => {
+                      if (link.scrollTo && document.querySelector('#' + link.id)) {
+                        document.querySelector('#' + link.id).scrollIntoView()
+                      } else {
+                        router.push('/#' + link.id)
+                      }
+                    }}>
+                    <Link href={link.scrollTo ? null : link.href}>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+                <div className="highlighter" ref={highlighterRef}/>
+              </ul>
+            </nav>
+        </Flex>
+      </FadeDown>
     </StyledNavbar>
   );
 };
@@ -68,9 +70,6 @@ const StyledNavbar = styled(Flex)`
   /* background: ${props => props.theme.primary}; */
   /* border-bottom: 1px solid gray; */
   .navbar-inner-container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     .logo {
       width: 40rem;
     }

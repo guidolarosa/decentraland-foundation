@@ -17,7 +17,7 @@ const TopBar = ({children, href}) => {
 const StyledTopBar = styled(Flex)`
     height: 5rem;
     display: inline-block;
-    background: ${props => props.theme.primary};
+    background: linear-gradient(-45deg, ${props => props.theme.primary}, skyblue);
     display: flex;
     justify-content: center;
     align-items: center;

@@ -17,7 +17,7 @@ interface Theme {
 
 const theme : Theme = {
     background: 'hsla(220, 2%, 9%, 1)',
-    primary: 'hsla(220, 77%, 59%, 1)',
+    primary: 'dodgerblue',
     footerText: 'hsla(0, 0%, 100%, 1)',
     bannerPrimary: 'hsla(103, 100%, 71%, 1)',
     bannerSecondary: 'hsla(61, 97%, 54%, 1)',
@@ -27,7 +27,7 @@ const theme : Theme = {
     navbarLinkBackgroundHover: 'hsla(220, 2%, 15%, 1)',
     navbarLinkBackgroundActive: 'hsla(220, 2%, 20%, 1)',
     borderColor: 'hsla(0, 0%, 100%, 0.5)',
-    footerBackground: 'hsla(0, 0%, 0%, 1)',
+    footerBackground: 'hsla(0, 0%, 0%, 0.6)',
     readMoreButtonBackground: 'hsla(220, 77%, 59%, 0.1)',
     cardBackground: 'hsla(220, 2%, 15%, 1)'
 }

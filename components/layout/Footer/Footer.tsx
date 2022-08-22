@@ -1,17 +1,22 @@
 import styled from 'styled-components'
 import Logo from 'components/layout/Logo/Logo'
-import Link from 'next/link'
-import {Flex, Box} from 'rebass'
+import {Flex, Box, Link} from 'rebass'
+
+const footerLinkStyles = {
+    mb: ['2rem', '0']
+}
 
 const Footer = (props) => {
     return (
         <StyledFooter justifyContent="center">
-            <Flex width={['90%', '90%', '180rem']} flexDirection="row" justifyContent="space-between" alignItems="center">
-                <Logo />
-                <Box className="footer-links" flexDirection="row">
-                    <Link href="/">About Us</Link>
-                    <Link href="/">Terms of Use</Link>
-                    <Link href="/">Contact</Link>
+            <Flex width={['90%', '90%', '180rem']} flexDirection={["column", "row"]} justifyContent="space-between" alignItems={['flex-start', "center"]}>
+                <Box mb={['4rem', '0']}>
+                    <Logo />
+                </Box>
+                <Box className="footer-links" display={'flex'} flexDirection={["column", "row"]}>
+                    <Link href="/" sx={footerLinkStyles}>About Us</Link>
+                    <Link href="/" sx={footerLinkStyles}>Terms of Use</Link>
+                    <Link href="/" sx={footerLinkStyles}>Contact</Link>
                 </Box>
             </Flex>
         </StyledFooter>

@@ -33,13 +33,13 @@ export default function Home() {
           heroContent={
             <Flex 
               className="hero-content-wrapper" 
-              width={['90%', '90%', '80rem']}
+              width={['90%', null, null, '80rem']}
               mx={'auto'}
             >
               <Flex 
-                width={['100%', '70%', '70%', '80rem']} 
+                width={['100%', '50%', '50%', '80rem']} 
                 mr={'auto'} 
-                pl={[0, 0, '10rem']} 
+                pl={[0, null,  null,'10rem']} 
                 height={['auto', 'calc(100vh - 10rem)', 'calc(100vh - 40rem)', 'auto']}
                 flexDirection={['column']}
                 justifyContent={['center', 'auto', 'auto']}
@@ -78,7 +78,7 @@ export default function Home() {
         <FadeUp>
           <Flex 
             flexDirection={"column"} 
-            width={['90%', '90%', '90%', '127rem']} 
+            width={['90%', null, null, '127rem']} 
             mx={'auto'}
             mt={['10rem', '10rem', '30rem']}
             mb={['20rem', '20rem', 0]}
@@ -111,7 +111,7 @@ export default function Home() {
                 Read more about the foundation
               </Link>
             </Box>
-            <Flex width={['90%', '90%', '123rem', '140rem']} className="ip-assets" flexDirection={["column-reverse", "row", "row"]} sx={{position: 'relative', mb: ['8rem', '32rem'], mx: 'auto'}}>
+            <Flex width={['90%', null, '123rem', '140rem']} className="ip-assets" flexDirection={["column-reverse", "row", "row"]} sx={{position: 'relative', mb: ['8rem', '32rem'], mx: 'auto'}}>
               <Flex flexDirection={"column"} sx={{'p' : {opacity: 0.7}}} width={["100%", "100%", "50%"]}>
                 <Text as="h3" fontSize={'6rem'} mb={'4rem'}>
                   IP Assets
@@ -146,7 +146,7 @@ export default function Home() {
             <Image src="/img/marqueeLogos.svg" alt="Partner logos" width={1000} height={150} />
           </Marquee> */}
         {/* </Flex> */}
-        <Flex id="news" className="news" flexDirection={"column"} width={['90%', '90%', '180rem']}>
+        <Flex id="news" className="news" flexDirection={"column"} width={['90%', null, null, '180rem']}>
           <Text as="h4" className="news-heading" fontSize={["3.8rem", "6rem"]} mb={"6rem"}>
             Find out about the latest updates of the Decentraland Foundation
           </Text>

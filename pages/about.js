@@ -24,7 +24,7 @@ export default function About() {
                 </Head>
                 <Header />
                 <Flex flexDirection={"column"} width={"100%"} alignItems={"center"} pb={"30rem"}>
-                    <Flex flexDirection={"column"} width={['90%', '90%', '160rem']} pt={"20rem"}>
+                    <Flex flexDirection={"column"} width={['90%', null, null, '160rem']} pt={"20rem"}>
                         <Flex flexDirection="column">
                             <FadeUp>
                                 <Box className="rellax" as="img" src="/img/logo.svg" sx={{

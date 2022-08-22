@@ -22,6 +22,7 @@ const Hero = ({
     return (
         <StyledHero 
             className={className} 
+            width={['90%', null, null, '180rem']} 
         >
             <FadeUp>
                 <Flex 
@@ -29,7 +30,6 @@ const Hero = ({
                     flexDirection={['column-reverse', 'row']} 
                     className={'hero-content'} 
                     mx={'auto'}
-                    width={['90%', '90%', '180rem']} 
                     alignItems={"center"}
                     justifyContent={['center', 'unset']} 
                     height={['auto', 'calc(100vh - 30rem)']}

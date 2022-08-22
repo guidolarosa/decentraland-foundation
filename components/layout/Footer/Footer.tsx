@@ -9,7 +9,7 @@ const footerLinkStyles = {
 const Footer = (props) => {
     return (
         <StyledFooter justifyContent="center">
-            <Flex width={['90%', '90%', '180rem']} flexDirection={["column", "row"]} justifyContent="space-between" alignItems={['flex-start', "center"]}>
+            <Flex width={['90%', null, null, '180rem']} flexDirection={["column", "row"]} justifyContent="space-between" alignItems={['flex-start', "center"]}>
                 <Box mb={['4rem', '0']}>
                     <Logo />
                 </Box>

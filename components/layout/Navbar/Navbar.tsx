@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <StyledNavbar width={"100%"} justifyContent="center">
       <FadeDown>
-        <Flex width={['90%', '90%', '180rem']} mx={'auto'}  className="navbar-inner-container" justifyContent={"space-between"} alignItems={"center"}>
+        <Flex width={['90%', null, null, '180rem']} mx={'auto'}  className="navbar-inner-container" justifyContent={"space-between"} alignItems={"center"}>
             <Link href="/" mr={"auto"}>
               <Logo className="logo" />
             </Link>

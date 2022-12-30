@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
-import Button from "components/common/Button/Button";
 import Logo from "components/layout/Logo/Logo";
-import { Flex, Box, Link } from 'rebass';
+import { Flex, Link } from 'rebass';
 import { breakpoints } from "utils/theme";
 import { FadeDown } from 'components/layout/Fade/Fade'
 import { MainNavigation } from 'utils/ui_constants';
+import { RxExternalLink } from 'react-icons/rx'
 
 const Navbar = () => {
   const highlighterRef = useRef(null);
@@ -51,8 +51,12 @@ const Navbar = () => {
                         router.push('/#' + link.id)
                       }
                     }}>
-                    <Link href={link.scrollTo ? null : link.href}>
+                    <Link 
+                      href={link.scrollTo ? null : link.href}
+                      target={link.external ? '_blank' : ''}
+                    >
                       {link.label}
+                      {link.external && <RxExternalLink />}
                     </Link>
                   </li>
                 ))}
@@ -110,8 +114,13 @@ const StyledNavbar = styled(Flex)`
           white-space: nowrap;
           position: relative;
           z-index: 2;
-          &:hover {
-           
+          a {
+            display: flex;
+            align-items: center;
+            svg {
+              margin-left: 1rem;
+              opacity: 0.6;
+            }
           }
           &:active {
             transition: 0s ease-in-out all;

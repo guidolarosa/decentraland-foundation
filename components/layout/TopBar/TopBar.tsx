@@ -6,7 +6,7 @@ const TopBar = ({children, href}) => {
     return (
         <StyledTopBar flexDirection='row' dataAos="fade-down" width={"100%"}>
             <div className="circle"/>
-            <Link href={href}>
+            <Link href={href} target="_blank">
                 {children}
             </Link>
             <div className="circle"/>

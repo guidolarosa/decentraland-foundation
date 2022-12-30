@@ -26,6 +26,7 @@ const Footer = (props) => {
 const StyledFooter = styled(Flex)`
     padding: 5rem 0;
     background: ${props => props.theme.footerBackground};
+    margin-top: 10rem;
     .footer-links {
         width: auto;
         a {

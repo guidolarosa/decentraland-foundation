@@ -4,10 +4,11 @@ interface NavigationItem {
     clickable?: boolean
   }
   
-  interface TopNavigationItem extends NavigationItem {
-    subLinks?: NavigationItem[],
-    scrollTo?: boolean
-    id: string
+interface TopNavigationItem extends NavigationItem {
+  subLinks?: NavigationItem[],
+  scrollTo?: boolean
+  id: string,
+  external?: boolean
 }
 
 interface News {
@@ -18,6 +19,12 @@ interface News {
 }
 
 export const MainNavigation : TopNavigationItem[] = [
+  {
+    label: "Join Us",
+    id: 'join-us',
+    href: "https://jobs.lever.co/Decentraland",
+    external: true
+  },
   {
     label: "About Us",
     id: 'about-us',

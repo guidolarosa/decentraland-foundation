@@ -19,11 +19,11 @@ export default function Home() {
     <StyledHome flexDirection={"column"}>
       <Head>
         <title>Decentraland Foundation</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Header
         beforeNavbar={
-          <TopBar href="/">
+          <TopBar href="https://jobs.lever.co/Decentraland">
             Are you interested in joining the Decentraland Foundation?
           </TopBar>
         }
@@ -45,12 +45,13 @@ export default function Home() {
                 justifyContent={['center', 'auto', 'auto']}
               >
                 <Text as="h1" className={'heading'} sx={{
-                  fontSize: ['6rem', '8rem', '10rem']
+                  fontSize: ['6rem', '8rem', '9rem'],
+                  whiteSpace: 'nowrap'
                 }}>
-                  Decentraland <br/>Foundation
+                  The Decentraland <br/>Foundation
                 </Text>
                 <Text className={'sub-heading'} sx={{lineHeight: '5rem', mb: '4rem', fontSize: '3rem', fontWeight: '200', opacity: 0.7}}>
-                  We foster the decentralization of Decentraland, along with the Decentraland community, and hold intellectual property assets.
+                  The Foundation is responsible for encouraging the decentralization of Decentraland, supporting the development of the platform, and most importantly, for enabling the Decentraland community to flourish and to create opportunities for them to grow. The Foundation also holds the intellectual property assets of Decentraland.
                 </Text>
                 <Button href="https://decentraland.org/">Go to Decentraland.org</Button>
               </Flex>
@@ -85,7 +86,7 @@ export default function Home() {
           >
             <Box className="breakdown" dataAos="fade-up" mb={['8rem', '20rem', '30rem', '20rem']}>
               <Text as="strong" textAlign={'center'} fontSize={'4rem'} mb={'4rem'} display={"block"} lineHeight={"7rem"}>
-                History of the Foundation / Decentraland, Decentraland DAO and MANA. 
+                The History of the Foundation, Decentraland, the Decentraland DAO, and of MANA
               </Text>
               <Text sx={{
                 opacity: '0.7',
@@ -94,7 +95,7 @@ export default function Home() {
                 lineHeight: '6rem',
                 fontSize: '2.5rem'
               }}>
-                The Decentraland Foundation is a private foundation with no commercial purposes. It was incorporated under the laws of Panama on April 20, 2020 and has its statutory seat in Panama City. The main object of the Foundation is holding the intellectual property assets of the Decentraland platform, and acting along with, and for the benefit of, the MANA and LAND communities at large, to promote the already achieved decentralization of Decentraland. 
+                The Decentraland Foundation is a private foundation with no commercial purposes. It was incorporated under the laws of Panama on April 20, 2020 and has its statutory seat in Panama City. The main object of the Foundation is holding the intellectual property assets of the Decentraland platform, and acting along with, and for the benefit of, the Decentraland community, to promote the already achieved decentralization of Decentraland. 
               </Text>
               <Link href="/about" mt={"6rem"} display={"block"} textAlign={"center"} fontSize={"2.5rem"} color={theme.primary} sx={{
                   transition: '0.25s ease-in-out all',
@@ -104,11 +105,9 @@ export default function Home() {
                   lineHeight: '6rem',
                   width: 'fit-content',
                   mx: 'auto',
-                  '&:hover': {
-                    background: theme.readMoreButtonBackground
-                  }
+                  background: theme.readMoreButtonBackground
                 }}>
-                Read more about the foundation
+                Read more about the Foundation
               </Link>
             </Box>
             <Flex width={['90%', null, '123rem', '140rem']} className="ip-assets" flexDirection={["column-reverse", "row", "row"]} sx={{position: 'relative', mb: ['8rem', '32rem'], mx: 'auto'}}>
@@ -116,11 +115,11 @@ export default function Home() {
                 <Text as="h3" fontSize={'6rem'} mb={'4rem'}>
                   IP Assets
                 </Text>
-                <Text as={'p'} fontSize={"2.5rem"} lineHeight={"5rem"} fontWeight={"200"} mb={"2rem"}>
-                  Due to the DAO’s lack of legal status, the Decentraland Foundation holds IP assets of the Decentraland platform including trademarks, software and copyright for the benefit of the community and in that capacity the Foundation undertakes actions against infringement.
+                <Text as={'p'} fontSize={"2rem"} lineHeight={"4rem"} fontWeight={"200"} mb={"2rem"}>
+                  Due to the DAO’s legal status, the Decentraland Foundation holds IP assets of the Decentraland platform. This includes trademarks, software, social media and copyrights which are held and protected for the benefit of the Decentraland community. In that capacity the Foundation undertakes actions against infringement.
                 </Text>
-                <Text as={'p'} fontSize={"2.5rem"} lineHeight={"5rem"} fontWeight={"200"} mb={"6rem"}>
-                  Among others, the Decentraland Foundation acting for the benefit of the Decentraland community as a whole, holds the intellectual property rights over the DCL Client, the Desktop Client, the SDK 5.0, the Marketplace (<Link sx={{color: theme.primary, fontWeight: 400}} href="https://market.decentraland.org" target={"_blank"}>https://market.decentraland.org</Link>), the Builder, the Blog, Events, Agora, Forum, the Land Manager, the Command Line Interface, DAO, the Developers’ Hub, the Rewards tool which, with any other features, tools and/or materials made available from time to time by the Foundation. It also holds the IP over the Decentraland name and logo, among other IP assets.
+                <Text as={'p'} fontSize={"2rem"} lineHeight={"4rem"} fontWeight={"200"} mb={"6rem"}>
+                  Among others, the Decentraland Foundation, acting for the benefit of the Decentraland community as a whole, holds the intellectual property rights of: the Decentraland Client, the Desktop Client, the SDK 5.0, the Marketplace (<Link sx={{color: theme.primary, fontWeight: 400}} href="https://market.decentraland.org" target={"_blank"}>https://market.decentraland.org</Link>), the Builder, the Blog, Events, Agora, the Forum, the Land Manager, the Command Line Interface, the Decentraland DAO, the Developers Hub, the Rewards tool which, with any other features, tools and/or materials made available from time to time by the Foundation. The Foundation also holds the IP over the Decentraland name and logo, social media accounts, among other IP assets.
                 </Text>
                 <Button type="secondary" href="/">Read More</Button>
               </Flex>
@@ -148,7 +147,7 @@ export default function Home() {
         {/* </Flex> */}
         <Flex id="news" className="news" flexDirection={"column"} width={['90%', null, null, '180rem']}>
           <Text as="h4" className="news-heading" fontSize={["3.8rem", "6rem"]} mb={"6rem"}>
-            Find out about the latest updates of the Decentraland Foundation
+            Discover what’s new in Decentraland on the Blog
           </Text>
 
           <Flex className="news-list" flexDirection={["column","row"]} mx={["0", "-2rem"]} justifyContent={"center"}>
@@ -220,7 +219,7 @@ const StyledHome = styled(Flex)`
           padding: 0 2rem;
           width: fit-content;
           border-radius: 0.5rem;
-          font-weight: 600;
+          font-weight: 500;
           background: ${props => props.theme.readMoreButtonBackground};
           &:hover {
           }

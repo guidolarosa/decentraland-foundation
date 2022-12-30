@@ -50,7 +50,7 @@ export default function Home() {
                 }}>
                   The Decentraland <br/>Foundation
                 </Text>
-                <Text className={'sub-heading'} sx={{lineHeight: '5rem', mb: '4rem', fontSize: '3rem', fontWeight: '200', opacity: 0.7}}>
+                <Text className={'sub-heading'} sx={{lineHeight: '4rem', mb: '4rem', fontSize: '2.5rem', fontWeight: '200', opacity: 0.7}}>
                   The Foundation is responsible for encouraging the decentralization of Decentraland, supporting the development of the platform, and most importantly, for enabling the Decentraland community to flourish and to create opportunities for them to grow. The Foundation also holds the intellectual property assets of Decentraland.
                 </Text>
                 <Button href="https://decentraland.org/">Go to Decentraland.org</Button>

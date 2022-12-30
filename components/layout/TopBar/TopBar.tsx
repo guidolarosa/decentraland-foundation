@@ -23,6 +23,8 @@ const StyledTopBar = styled(Flex)`
     align-items: center;
     font-size: 2rem;
     font-weight: 500;
+    text-align: center;
+    padding: 4rem 0;
     .circle {
         margin: 0 2rem;
         width: 1.5rem;

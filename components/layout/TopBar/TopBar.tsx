@@ -4,7 +4,14 @@ import { Flex } from 'rebass';
 
 const TopBar = ({children, href}) => {
     return (
-        <StyledTopBar flexDirection='row' dataAos="fade-down" width={"100%"}>
+        <StyledTopBar 
+            flexDirection='row' 
+            dataAos="fade-down" 
+            width={"100%"}
+            sx={{
+                py: ['4rem', '0']
+            }}
+        >
             <div className="circle"/>
             <Link href={href} target="_blank">
                 {children}
@@ -24,7 +31,6 @@ const StyledTopBar = styled(Flex)`
     font-size: 2rem;
     font-weight: 500;
     text-align: center;
-    padding: 4rem 0;
     .circle {
         margin: 0 2rem;
         width: 1.5rem;

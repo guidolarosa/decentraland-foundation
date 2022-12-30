@@ -35,6 +35,10 @@ export default function Home() {
               className="hero-content-wrapper" 
               width={['90%', null, null, '80rem']}
               mx={'auto'}
+              sx={{
+                position: 'relative',
+                zIndex: 2
+              }}
             >
               <Flex 
                 width={['100%', '50%', '50%', '80rem']} 
@@ -46,14 +50,17 @@ export default function Home() {
               >
                 <Text as="h1" className={'heading'} sx={{
                   fontSize: ['6rem', '8rem', '9rem'],
-                  whiteSpace: 'nowrap'
+                  whiteSpace: 'nowrap',
+                  textShadow: '0 0 1rem rgba(0,0,0,0.5)'
                 }}>
                   The Decentraland <br/>Foundation
                 </Text>
                 <Text className={'sub-heading'} sx={{lineHeight: '4rem', mb: '4rem', fontSize: '2.5rem', fontWeight: '200', opacity: 0.7}}>
                   The Foundation is responsible for encouraging the decentralization of Decentraland, supporting the development of the platform, and most importantly, for enabling the Decentraland community to flourish and to create opportunities for them to grow. The Foundation also holds the intellectual property assets of Decentraland.
                 </Text>
-                <Button href="https://decentraland.org/">Go to Decentraland.org</Button>
+                <Button href="https://decentraland.org/">
+                  Go to Decentraland.org
+                </Button>
               </Flex>
             </Flex>
           }
@@ -67,7 +74,8 @@ export default function Home() {
                 width: ['40rem', '50rem', '60rem'],
                 height: ['55rem', '100%'],
                 top: ['0', 1/2, 'calc(50% - 35rem)', 0],
-                right: ['-25%', '-15%', 0]
+                right: ['-25%', '-15%'],
+                zIndex: 1
               }}
             >
                 <Image src="/img/heroGraphic.svg" layout="responsive" width={586} height={820} priority alt="Decentraland Foundation"/>

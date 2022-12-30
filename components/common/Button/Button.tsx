@@ -41,6 +41,7 @@ const commonStyles = `
     border-radius: 0.75rem;
     // font-weight: 600;
     transition: 0.1s ease-in-out all;
+    white-space: nowrap;
     // letter-spacing: 0.1rem;
     color: ${theme.mainText};
     &.primary {
